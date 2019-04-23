@@ -17,7 +17,11 @@ FSJS project 2 - List Filter and Pagination
    scoped to that function.
 ***/
 
-
+//These variable store DOM elements.
+const mainDiv = document.querySelector('.page');
+const students = document.getElementsByTagName('li')
+console.log(mainDiv)
+console.log(students)
 
 
 /*** 
