@@ -39,6 +39,11 @@ console.log(students)
        "invoke" the function 
 ***/
 
+//This function will create pages of students
+const showPage( list, page ) => {
+   
+}
+
 
 
 
