@@ -20,8 +20,8 @@ FSJS project 2 - List Filter and Pagination
 //These variable store DOM elements.
 const mainDiv = document.querySelector('.page');
 const students = document.getElementsByTagName('li')
-console.log(mainDiv)
-console.log(students)
+//console.log(mainDiv)
+//console.log(students)
 
 
 /*** 
@@ -40,10 +40,16 @@ console.log(students)
 ***/
 
 //This function will create pages of students
-const showPage( list, page ) => {
-   
-}
+const showPage = ( list, page ) => {
+   const startIndex = ( page * 9) - 1
+   const endIndex = page * 10
 
+   for () {
+
+
+   };
+};
+//console.log( showPage )
 
 
 
