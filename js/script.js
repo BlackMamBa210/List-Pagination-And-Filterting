@@ -47,7 +47,7 @@ const showPage = ( list, page ) => {
    for () {
 
 
-   };
+   }; //Will continue the for loop tomorrow
 };
 //console.log( showPage )
 
