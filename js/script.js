@@ -40,16 +40,21 @@ const students = document.getElementsByTagName('li')
 ***/
 
 //This function will create pages of students
-const showPage = ( list, page ) => {
-   const startIndex = ( page * 9) - 1
-   const endIndex = page * 10
+function sectionSelection ( list, section ) {
+	const showPage = ( list, page ) => {
+		const startIndex = ( section * perPage ) - perPage
+		const endIndex = section * perPage - 1
 
-   for () {
-
-
-   }; //Will continue the for loop tomorrow
+		for ( let index = 0; index <= 10; index += 1 ) {
+			if ( list[index] >= startIndex && list[index] < endIndex ) {
+				list[index].style.display = 'block'
+			} else {
+				list[index].style.display = 'none'
+			  };	
+		};
+    }; 
 };
-//console.log( showPage )
+//console.log( sectionSelection )
 
 
 
@@ -57,6 +62,7 @@ const showPage = ( list, page ) => {
    Create the `appendPageLinks function` to generate, append, and add 
    functionality to the pagination buttons.
 ***/
+
 
 
 
