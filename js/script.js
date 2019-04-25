@@ -20,6 +20,7 @@ FSJS project 2 - List Filter and Pagination
 //These variable store DOM elements.
 const mainDiv = document.querySelector('.page');
 const students = document.getElementsByTagName('li')
+const maxItems = 10;
 //console.log(mainDiv)
 //console.log(students)
 
@@ -63,8 +64,27 @@ function sectionSelection ( list, section ) {
    functionality to the pagination buttons.
 ***/
 
+function appendPageLinks ( list ) {
+  let pages = list.page / maxItems;
+  let pageDiv = document.querySelector( '.page' );
+  let pagDiv = document.createElement( 'div' );
+  let ul = document.getElementsByTagName( 'li' );
 
+  div.className = 'pagination';
+  pageDiv.appendChild( 'ul' );
 
+    for ( i = 0; i <= maxItems; i++ ) {
+      const li = document.createElement( 'li' );
+      const a = document.createElement( 'a' );
+    };
+    students.addEventListener('click', () => {
+      if(div.style.display == 'none') {
+        toggleList.textContent = 'Hide List'
+        div.style.display = 'block'
+      };
+  });
+};
+console.log(appendPageLinks)
 
 
 
