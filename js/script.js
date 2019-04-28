@@ -5,87 +5,62 @@ FSJS project 2 - List Filter and Pagination
    
 // Study guide for this project - https://drive.google.com/file/d/1OD1diUsTMdpfMDv677TfL1xO2CEkykSz/view?usp=sharing
 
-
-/*** 
-   Add your global variables that store the DOM elements you will 
-   need to reference and/or manipulate. 
-   
-   But be mindful of which variables should be global and which 
-   should be locally scoped to one of the two main functions you're 
-   going to create. A good general rule of thumb is if the variable 
-   will only be used inside of a function, then it can be locally 
-   scoped to that function.
-***/
-
 //These variable store DOM elements.
-const mainDiv = document.querySelector('.page');
-const students = document.getElementsByTagName('li')
+const listItems = document.querySelectorAll('.student-item');
 const maxItems = 10;
-//console.log(mainDiv)
-//console.log(students)
+
+//This function will create pages of students.
+function showPage( list, page ) {	
+		const startIndex = ( page * maxItems ) - maxItems;
+		const endIndex = page * maxItems - 1;
+
+    //This for loop will display only 10 students and hide all the rest.
+		for( let i = 0; i < list.length; i++ ) {
+			if( i >= startIndex && i <= endIndex ) {
+				list[i].style.display = 'block';
+      } 
+      else {
+				list[i].style.display = 'none';
+			}	
+		} 
+}
+
+//This function will add functional buttons to the pages and reveal the rest of the list with pages of 10 when clicked.
+function appendPageLinks( list ) {
+  const pages = document.querySelector( '.page' );
+  const div = document.createElement( 'div' );
+  const ul = document.querySelector( 'ul' );
+
+  div.classList.add( 'pagination' );
+  div.appendChild( ul );
+  pages.appendChild( div );
+  
+  //This for loop will start the pages at index 1 and so on.
+  for( let i = 1; i < list.length / maxItems; i++ ) {
+    const li = document.createElement( 'li' );
+    const a = document.createElement( 'a' );
+
+    a.setAttribute( 'href', '#' );
+    a.textContent = i;
+    li.appendChild( a );
+    ul.appendChild( li );
+  }
+
+  //This for loop adds the click functianlity to the pages.
+  const aTag = document.querySelectorAll('a');
+  
+  aTag[0].classList.add('active');
+
+  for( let i = 0; i < aTag.length; i++) {
+    ul.addEventListener('click', ( event ) => {
+      aTag[i].classList.remove( 'active' );
+      event.target.classList.add( 'active' );
+      showPage( listItems, event.target.textContent );
+    });
+  }
+}
+
+showPage( listItems, 1 );
+appendPageLinks( listItems );
 
 
-/*** 
-   Create the `showPage` function to hide all of the items in the 
-   list except for the ten you want to show.
-
-   Pro Tips: 
-     - Keep in mind that with a list of 54 students, the last page 
-       will only display four.
-     - Remember that the first student has an index of 0.
-     - Remember that a function `parameter` goes in the parens when 
-       you initially define the function, and it acts as a variable 
-       or a placeholder to represent the actual function `argument` 
-       that will be passed into the parens later when you call or 
-       "invoke" the function 
-***/
-
-//This function will create pages of students
-function sectionSelection ( list, section ) {
-	const showPage = ( list, page ) => {
-		const startIndex = ( section * perPage ) - perPage
-		const endIndex = section * perPage - 1
-
-		for ( let index = 0; index <= 10; index += 1 ) {
-			if ( list[index] >= startIndex && list[index] < endIndex ) {
-				list[index].style.display = 'block'
-			} else {
-				list[index].style.display = 'none'
-			  };	
-		};
-    }; 
-};
-//console.log( sectionSelection )
-
-
-
-/*** 
-   Create the `appendPageLinks function` to generate, append, and add 
-   functionality to the pagination buttons.
-***/
-
-function appendPageLinks ( list ) {
-  let pages = list.page / maxItems;
-  let pageDiv = document.querySelector( '.page' );
-  let pagDiv = document.createElement( 'div' );
-  let ul = document.getElementsByTagName( 'li' );
-
-  div.className = 'pagination';
-  pageDiv.appendChild( 'ul' );
-
-    for ( i = 0; i <= maxItems; i++ ) {
-      const li = document.createElement( 'li' );
-      const a = document.createElement( 'a' );
-    };
-    students.addEventListener('click', () => {
-      if(div.style.display == 'none') {
-        toggleList.textContent = 'Hide List'
-        div.style.display = 'block'
-      };
-  });
-};
-console.log(appendPageLinks)
-
-
-
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
