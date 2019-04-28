@@ -10,3 +10,9 @@
 * A slack moderater suggested me to do some practice exercises that he kindly linked for me and after spending some time doing those practice exercises I was able to see my mistake and apply changes to my function.
 * After the changes were made I checked the variable `console.log` and got a few token errors then fixed them.
 * Once the variable was running without errors I moved onto writing my for loops. I didn't fully understand for loops in javascript so I googled it and did the javascript loops practice available in the Library. From there I got a better understanding of for loops and applied them to my project and ran the `console.log` to test the loop.
+
+# Day 3:
+* Today I worked on creating the `appendPageLinks` to add functionally to the pagination buttons.
+* I added active pagination links in the `index.html` on lines 560-570.
+* I didn't fully understand how to write the `appendPageLinks` function and `appenChild` as well as the `for` loops for it. So I went back and rewatched some of the videos but I feel like I still don't fully understand.
+* Tomorrow I will do more research and look for exercises to help me better understand manipulating the DOM.
