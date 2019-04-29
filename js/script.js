@@ -45,6 +45,7 @@ function appendPageLinks( list ) {
   
   aTag[0].classList.add('active');
 
+  //This loop will add the click event to the pages.
   for( let i = 0; i < aTag.length; i++) {
     ul.addEventListener('click', ( event ) => {
       aTag[i].classList.remove( 'active' );
