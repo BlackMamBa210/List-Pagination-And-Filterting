@@ -1,4 +1,6 @@
 # List Pagination And Filterting
+# url:http://127.0.0.1:5502/
+
 # Day 1:
 * Today I started project 2 by creating variables to select the DOM elements from 64students.html. I targeted the '.page' and 'li' elements.
 * I tested the results with `console.log` and no errors.
